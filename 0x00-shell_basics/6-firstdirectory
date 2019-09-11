@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo mkdir holberton /var/tmp
+sudo mkdir /tmp/holberton

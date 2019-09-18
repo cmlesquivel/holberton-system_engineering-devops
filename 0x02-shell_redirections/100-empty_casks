@@ -1,2 +1,2 @@
 #!/bin/bash
-ls * -la | find  -empty | tr -d [./]
+find  -empty  -type f -or -type d | rev | cut -d '/' -f 1 | rev

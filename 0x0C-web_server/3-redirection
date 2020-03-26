@@ -8,4 +8,4 @@ ufw allow ssh
 ufw allow 'OpenSSH'
 echo "Holberton School for the win!" | tee /var/www/html/index.html
 sed -i "30i \\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
-service nginx start
+sudo service nginx restart

@@ -5,7 +5,5 @@ apt-get install software-properties-common
 add-apt-repository ppa:vbernat/haproxy-1.6 -y
 apt-get update
 apt-get install haproxy=1.6.\* -y
-
-echo -e "\nfrontend Local_Server\n\tbind *:80\n\tmode http\n\tdefault_backend My_Web_Servers\n\nbackend My_Web_Servers\n\tbalance roundrobin\n\tserver 1210-web-01 34.74.191.2:80 check\n\tserver 1210-web-02 54.90.167.15:80 check\n\t">> /etc/nginx/sites-available/default
-
+echo -e "\nfrontend Local_Server\n\tbind *:80\n\tmode http\n\tdefault_backend My_Web_Servers\n\nbackend My_Web_Servers\n\tbalance roundrobin\n\tserver 1210-web-01 34.74.191.2:80 check\n\tserver 1210-web-02 54.90.167.15:80 check\n\t">> /etc/haproxy/haproxy.cfg
 service haproxy restart

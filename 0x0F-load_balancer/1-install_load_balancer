@@ -17,3 +17,6 @@ backend My_Web_Servers
     mode http
     server 1210-web-01 34.74.191.2:80 check
     server 1210-web-02 54.90.167.15:80 check ">> /etc/nginx/sites-available/default
+
+
+service haproxy restart

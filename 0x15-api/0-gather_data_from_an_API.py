@@ -11,16 +11,18 @@ if __name__ == "__main__":
         url = "https://jsonplaceholder.typicode.com/users/"
         url_task = "{}{}/todos".format(url, int(sys.argv[1]))
         url_name = "{}{}/".format(url, int(sys.argv[1]))
+
         listTask = requests.get(url_task).json()
         name = requests.get(url_name).json()["name"]
-        mystr = "is done with tasks"
+        mystr = "Employee {} is done with tasks({}/{}):"
 
         for item in listTask:
             if item["completed"] is True:
                 doList.append(item["title"])
 
-        print("{} {} ({}/{}):".format(name, mystr, len(doList), len(listTask)))
+        print(mystr.format(name, len(doList), len(listTask)))
         for i in doList:
             print("\t {}".format(i))
+
     except Exception as e:
         pass

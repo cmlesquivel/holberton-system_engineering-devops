@@ -18,17 +18,12 @@ if __name__ == "__main__":
         username = requests.get(url_username).json()["username"]
 
         with open(nameFile, 'w', newline='') as csvfile:
-            fieldnames = ["USER_ID",
-                          "USERNAME",
-                          "TASK_COMPLETED_STATUS",
-                          "TASK_TITLE"]
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writeheader()
-
+            spamwriter = csv.writer(csvfile, delimiter=',',
+                                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
             for item in listTask:
-                writer.writerow({'USER_ID': id,
-                                 'USERNAME': username,
-                                 'TASK_COMPLETED_STATUS': item["completed"],
-                                 'TASK_TITLE': item["title"]})
+                spamwriter.writerow([id,
+                                     username,
+                                     item["completed"],
+                                     item["title"]])
     except Exception as e:
         pass

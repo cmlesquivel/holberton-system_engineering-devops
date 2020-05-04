@@ -21,7 +21,6 @@ if __name__ == "__main__":
 
         print("{} {} ({}/{}):".format(name, mystr, len(doList), len(listTask)))
         for i in doList:
-            print("\t {}".format(i))
+            print("\t{}".format(i))
     except Exception as e:
         pass
-

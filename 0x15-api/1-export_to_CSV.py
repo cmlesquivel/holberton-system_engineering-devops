@@ -18,7 +18,10 @@ if __name__ == "__main__":
         username = requests.get(url_username).json()["username"]
 
         with open(nameFile, 'w', newline='') as csvfile:
-            spamwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+            spamwriter = csv.writer(csvfile,
+                                    delimiter=',',
+                                    quotechar='"',
+                                    quoting=csv.QUOTE_ALL)
             for item in listTask:
                 spamwriter.writerow([id,
                                      username,

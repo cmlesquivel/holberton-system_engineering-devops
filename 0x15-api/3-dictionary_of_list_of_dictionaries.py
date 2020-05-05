@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ Dictionary of list of dictionaries export data in json format """
 
-import requests
 import json
+import requests
+
 
 if __name__ == "__main__":
     try:
